@@ -31,4 +31,7 @@ const supplierSchema = new mongoose.Schema<ISupplier>({
   },
 });
 
-export const supplierModel = mongoose.model("suppliers", supplierSchema);
+export const supplierModel = mongoose.model<ISupplier>(
+  "suppliers",
+  supplierSchema
+);

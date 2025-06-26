@@ -2,14 +2,12 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 import express, { Application, Request, Response } from "express";
 import "dotenv/config";
-import { rootRoute } from "./routes/routes";
-import { productRoute } from "./routes/routes.product";
+import { rootRoute } from "./routes/routes.root";
 
 const app: Application = express();
 app.use(express.json());
 
-app.use("/customer", rootRoute);
-app.use("/pharmacy", productRoute);
+app.use(rootRoute);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
